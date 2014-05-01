@@ -1,0 +1,42 @@
+
+html,body,h1,h2,h3,h4,h5,p,ul,li,ol,section,header,footer{
+    margin:0;
+    padding:0;
+}
+a,a:active{
+    text-decoration:none;
+    outline:none;
+}
+header{
+    background-color:#374348;
+    padding:10px;
+    box-shadow:0 -1px 0 #3e4b51 inset,0 0 15px #384348 inset,0 1px 1px #bbb;
+    border-bottom:1px solid #373d40;
+    position:relative;
+    height:85px;
+    z-index:5;
+}
+header h1{
+    text-align:center;
+    width:200px;
+    height:40px;
+    position:absolute;
+    top:50%;
+    margin-top:-20px;
+    left:50px;
+    margin-left:0;
+}
+header h1 a{
+    color:#fff;
+}
+header h1 a b{
+    color:#da431c;
+}
+
+
+@media screen and (max-width:480px){
+    header h1{
+        left:50%;
+        margin-left:-100px;
+    }
+}
