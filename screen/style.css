@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 100vw;
+  outline: none;
+  border: none;
+}
+
+.gohome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 60px;
+}
+
+.goleft {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 340px;
+  height: 540px;
+}
+
+.goright {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 340px;
+  height: 540px;
+}
+
+.go401 {
+  position: absolute;
+  top: 0;
+  left: 55%;
+  width: 180px;
+  height: 80px;
+}

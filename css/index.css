@@ -1,42 +1,379 @@
-
-html,body,h1,h2,h3,h4,h5,p,ul,li,ol,section,header,footer{
+*{
     margin:0;
     padding:0;
+    box-sizing: border-box;
 }
-a,a:active{
-    text-decoration:none;
-    outline:none;
+body{
+    font-weight: 100;
+    font-family: sans-serif;
+    background-color: #fff;
+    font-size:0.8rem;
 }
-header{
-    background-color:#374348;
-    padding:10px;
-    box-shadow:0 -1px 0 #3e4b51 inset,0 0 15px #384348 inset,0 1px 1px #bbb;
-    border-bottom:1px solid #373d40;
-    position:relative;
-    height:85px;
-    z-index:5;
-}
-header h1{
-    text-align:center;
-    width:200px;
-    height:40px;
-    position:absolute;
-    top:50%;
-    margin-top:-20px;
-    left:50px;
-    margin-left:0;
-}
-header h1 a{
-    color:#fff;
-}
-header h1 a b{
-    color:#da431c;
+a,
+a:focus,
+a:active{
+    text-decoration: none;
+    color: #454545;
 }
 
+/**
+common
+**/
+.mt{
+    margin-top: 1rem !important;
+}
+.text-center{
+    text-align: center;
+}
 
-@media screen and (max-width:480px){
-    header h1{
-        left:50%;
-        margin-left:-100px;
+.header{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #eee;
+}
+.header .brand{
+    float: left;
+    overflow: hidden;
+}
+.header .logo{
+    float: left;
+    height: 50px;
+    /* animation: shock ease-in 3s infinite; */
+    display: inline-block;
+}
+@keyframes shock {
+    0%{
+        transform: rotate(-45deg);
     }
+    50%{
+        transform: rotate(45deg);
+    }
+    100%{
+        transform: rotate(-45deg);
+    }
+}
+.header .logo img{
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.header .title{
+    font-size: 0.9rem;
+    font-weight: 100;
+    display: inline-block;
+    float: left;
+}
+.cn{
+    font-size: 0.75rem;
+    margin-left: 5px;
+    color: #f66;
+}
+.container{
+    width: 1200px;
+    margin:0 auto;
+    position: relative;
+    overflow: hidden;
+    padding:0 20px;
+}
+
+
+.menu{
+    float: right;
+}
+
+.menu a {    
+    padding:10px;
+}
+
+.menu a:hover,
+.menu a.active{
+    transform: scale(1.2);
+    transition: ease 1s;
+    background: rgba(0,0,0,0.04);
+}
+.hex{
+    width: 200px;
+    height: 230px;
+    transform: rotate(-60deg) skewY(30deg) translateZ(-1px);
+    overflow: hidden;
+    margin-bottom: 50px;
+    transition: 0.6s;
+}
+
+.hex .hex-box{
+    width: 100%;
+    height: 100%;
+    transform:  skewY(-30deg) rotate(60deg);
+    overflow: hidden;
+    position: relative;
+}
+.hex .hex-box .text{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: #efefef;
+    left: -100%;
+    right: -100%;
+    position: absolute;
+    margin:0 auto;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+.hex:hover{
+    transform: rotate(-60deg) skewY(30deg)  translateZ(-1px) scale(1.2);
+}
+.hex:hover .hex-box .text{
+    background: #f66;
+    color: #fff;
+}
+.hex:hover .hex-box .text .title{
+    transform: translateY(-20px);
+}
+.hex:hover .hex-box .text .title::after{
+   content: "";
+   display: inline-block;
+   width: 50%;
+   height: 2px;
+   background-color: #fff;
+   margin:0 auto;
+   position: absolute;
+   left: 50%;
+   margin-left: -25%;
+   bottom: -10px;
+}
+.hex:hover .hex-box .text .subtitle{
+    color: #fff;
+}
+.hex .hex-box .text .title{
+    font-weight: 400;
+    margin-top: 50%;
+}
+.hex .hex-box .text .subtitle{
+    color:#f66;
+}
+
+.service .container{
+    padding:20px 0;    
+}
+.service .container.hex-group{
+    height:690px;
+}
+.service .hex{
+    margin:10px;
+    float: left;
+}
+.service .hex-1 .hex:nth-child(1){ animation: hex1 ease-in 1s forwards;}
+.service .hex-1 .hex:nth-child(2){ animation: hex2 ease-in 1.2s forwards;}
+.service .hex-1 .hex:nth-child(3){ animation: hex3 ease-in 1.4s forwards;}
+.service .hex-2 .hex:nth-child(1){ animation: hex1 ease-in 1.6s forwards;}
+.service .hex-2 .hex:nth-child(2){ animation: hex2 ease-in 1.8s forwards;}
+.service .hex-3 .hex:nth-child(1){ animation: hex2 ease-in 2s forwards;}
+@keyframes hex1{from{opacity:0;transform: rotate(-60deg) skewY(30deg) translateZ(-1px) translateX(-200px);}}
+@keyframes hex2{from{opacity:0;transform: rotate(-60deg) skewY(30deg) translateZ(-1px) translateY(200px);}}
+@keyframes hex3{from{opacity:0;transform: rotate(-60deg) skewY(30deg) translateZ(-1px) translateX(200px);}}
+
+.service .hex-1,
+.service .hex-2,
+.service .hex-3{
+    position: absolute;
+}
+.service .hex-1{
+    top:20px;
+    width:660px;
+    margin: 0 auto;
+    left:50%;
+    margin-left: -330px;
+}
+.service .hex-2{
+    top:210px;
+    width: 440px;
+    left:50%;
+    margin-left: -220px;
+}
+.service .hex-3{
+    top:400px;
+    width: 220px;
+    left:50%;
+    margin-left: -110px;
+}
+.service .hex-1::after{
+    content: '';
+    clear: both;
+}
+
+.hero{
+    min-height: 200px;
+    border-bottom: 1px dashed #efefef;
+    position: relative;
+    overflow: hidden;
+}
+.hero .walking-box{
+    height: 68px;
+    width: 60px;
+    position: absolute;
+    bottom: 0; 
+    animation: walking-move 10s linear infinite;
+}
+.hero .walking-box:hover,
+.hero .walking-box:hover .walking-man{
+    animation-play-state: paused
+}
+.hero .container{
+    padding:50px 20px;
+    display: flex;
+    flex-direction: row;
+}
+.hero .me{
+    padding:20px;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+    width: 300px;
+}
+.hero .me .about{
+    padding:20px 0;
+    line-height: 2em;
+}
+.hero .container:hover .me{
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transform: perspective(200px) rotateY(4deg);
+    transform-origin: left;
+}
+.hero .slide-box{
+    flex:1;
+    padding:20px;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.hero .container:hover .slide-box{
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+    transform: perspective(300px) rotateY(-2deg);
+    transform-origin: right;
+}
+@keyframes walking-move{
+    from{
+       right: -60px;
+    }
+    to{
+      right: 100%;
+    }
+}
+
+/*************************
+walking-man 
+*************************/
+.walking-man{
+    background-image: url("../images/walking-man-68.png");
+    height: 68px;
+    width: 55.25px;
+    background-position-y: 0;
+    animation: walking 0.8s steps(8) infinite;
+    cursor: pointer;
+}
+
+@keyframes walking{
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: 480px;
+    }
+}
+/*************************
+responsive 
+*************************/
+@media(max-width:1240px){
+    .container{
+        width: 940px;
+    }
+    .service .hex{
+        width: 160px;
+        height: 184px;
+    }
+    .service .hex-1{
+        width: 540px;
+        margin-left: -270px;
+    }
+    .service .hex-2{
+        width: 360px;
+        margin-left: -180px;
+        top:170px;
+    }
+    .service .hex-3{
+        top:320px;
+        width: 180px;
+        margin-left: -90px;
+    }
+}
+
+@media(max-width:960px){
+    .container{
+        width: 680px;
+    }
+}
+
+@media(max-width:740px){
+    .container{
+        width: 100%;
+    }
+    .menu a{
+        padding:5px;
+    }
+    .hero .container{
+        flex-direction: column;
+    }
+    .hero .me{
+        text-align: center;
+        width: auto;
+    }
+    .hero .container:hover .me,
+    .hero .container:hover .slide-box{
+        box-shadow: none;
+        transform: none;
+    }
+    .service .hex{
+        width: 120px;
+        height: 138px;
+        margin:5px;
+    }
+    .service .hex-1{
+        width: 390px;
+        margin-left: -195px;
+    }
+    .service .hex-2{
+        width: 260px;
+        margin-left: -130px;
+        top:130px;
+    }
+    .service .hex-3{
+        width: 130px;
+        margin-left: -65px;
+        top:240px;
+    }
+    .header{
+        height: auto;
+    }
+    .header .brand .logo,
+    .header .brand .title{
+        float: none;
+        display: inline;
+        vertical-align: top;
+    }
+    .header .brand .title span{
+        vertical-align: top;
+    }
+    .header .brand,
+    .header .menu{
+        float: none;
+        margin:0 auto;
+        text-align: center;
+    }
+}
+
+
+/*************************
+footer
+*************************/
+.footer{
+    padding: 2rem;
 }
